@@ -1,0 +1,67 @@
+Disaster Evacuation Planner
+
+A React + TypeScript + Vite DAA prototype for explainable emergency evacuation planning. It uses real latitude/longitude data for Hyderabad, Puri/Bhubaneswar, and Chennai scenarios, and the map base is the live Esri World Imagery satellite layer.
+
+Run locally
+
+Bash
+
+
+
+pnpm install
+pnpm dev
+
+
+
+Open http://localhost:3000.
+
+What is implemented
+
+•
+Hand-built binary min-heap priority queue in src/algorithms.ts.
+
+•
+Dijkstra with risk/congestion weighted roads, blocked-edge handling, predecessor reconstruction, and step trace capture.
+
+•
+BFS for minimum-hop comparison, reachability, and replay levels.
+
+•
+Greedy shelter assignment with capacity reduction, split evacuation, stranded reasons, and explicit priority-score breakdown.
+
+•
+Real Esri World Imagery tiles with Esri attribution and optional World_Boundaries_and_Places reference labels.
+
+•
+Dark/light control-room UI, phone bottom-sheet layout, language dropdown for 12 supported languages, Urdu RTL, localStorage preferences, export and print actions.
+
+•
+Built-in validation for blocked-edge avoidance, shelter capacity, and population accounting.
+
+Suggested viva demo
+
+1.
+Start in the Hyderabad Musi scenario and point out the four danger zones, shelters, and ochre routes over the real satellite basemap.
+
+2.
+Click a zone and explain the weighted priority-score bar and the shelter WHY statement.
+
+3.
+Click a road on the map to block it, then press Re-plan. Explain how the assignment and stranded count change.
+
+4.
+Open the algorithm comparison section and contrast BFS minimum hops with Dijkstra risk-weighted cost.
+
+5.
+Press PLAY in Algorithm replay. Show the current node, tentative-cost table, relaxed edges, and live heap queue.
+
+6.
+Switch to Odisha or Chennai to demonstrate the same algorithms on a different real-place graph.
+
+7.
+Adjust priority sliders or shelter capacity and show an immediate recomputation and validation badge.
+
+Data note
+
+This is an educational DAA prototype using realistic static scenario data. It is not a source of live emergency instructions or official evacuation guidance.
+
